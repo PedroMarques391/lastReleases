@@ -1,5 +1,5 @@
 import puppeteer, { Browser, Page } from 'puppeteer';
-import { getDescription, getGender, getLaunch, getTitles } from './utils/getItens';
+import { getDescription, getGender, getLaunch, getTitle } from './utils/getItens';
 import sendEmail from './utils/sendEmail';
 
 export interface IMovieInterface {
@@ -18,12 +18,12 @@ export const webScraping = async () => {
 
     await page.setViewport({ width: 1080, height: 1024 });
 
-    const title: string[] = await getTitles(page)
+    const titles: string[] = await getTitle(page)
     const launchs: string[] = await getLaunch(page)
     const genders: string[] = await getGender(page)
     const descriptions: string[] = await getDescription(page)
 
-    const movies: IMovieInterface[] = title.map((title, i) => ({
+    const movies: IMovieInterface[] = titles.map((title, i) => ({
         title,
         launch: launchs[i],
         gender: genders[i],

@@ -1,7 +1,7 @@
 import { Page } from "puppeteer";
 import { Genres } from "./filmGenres";
 
-export async function getTitles(page: Page): Promise<string[]> {
+export async function getTitle(page: Page): Promise<string[]> {
     return await page.$$eval("a.meta-title-link", titles => {
         return titles.map(title => title.textContent)
     });
