@@ -13,7 +13,7 @@ export async function getLaunch(page: Page): Promise<string[]> {
     })
 }
 
-export async function getGender(page: Page): Promise<string[]> {
+export async function getGenre(page: Page): Promise<string[]> {
     const allAWithClassxXx: string[] = await page.$$eval("div.meta-body-item > a.xXx", genres => {
         return genres.map((gender) => gender.textContent)
     })
