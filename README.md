@@ -17,12 +17,14 @@ A funcionalidade é bem simples: ao iniciar, ele pega informações dos últimos
 
 ### Clonando o Repositório
 
-Primeiro, clone o repositório do projeto:
+Primeiro, clone o repositório e inicialize o projeto:
 
 ```bash
 git clone https://github.com/PedroMarques391/lastReleases.git
 cd lastReleases
+npm init -y
 ```
+
 
 ### Instalação das Dependências
 
